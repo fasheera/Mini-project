@@ -2,29 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\user;
+use App\main;
 use Illuminate\Http\Request;
 
-class User1Controller extends Controller
+class MainController extends Controller
 {
     /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    } 
-        /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        //
-        return view('date');
+        return view('main');
     }
 
     /**
@@ -45,17 +35,16 @@ class User1Controller extends Controller
      */
     public function store(Request $request)
     {
-          
-
+        //
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\user1  $user1
+     * @param  \App\main  $main
      * @return \Illuminate\Http\Response
      */
-    public function show(user1 $user1)
+    public function show(main $main)
     {
         //
     }
@@ -63,10 +52,10 @@ class User1Controller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\user1  $user1
+     * @param  \App\main  $main
      * @return \Illuminate\Http\Response
      */
-    public function edit(user1 $user1)
+    public function edit(main $main)
     {
         //
     }
@@ -75,10 +64,10 @@ class User1Controller extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\user1  $user1
+     * @param  \App\main  $main
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, user1 $user1)
+    public function update(Request $request, main $main)
     {
         //
     }
@@ -86,10 +75,10 @@ class User1Controller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\user1  $user1
+     * @param  \App\main  $main
      * @return \Illuminate\Http\Response
      */
-    public function destroy(user1 $user1)
+    public function destroy(main $main)
     {
         //
     }

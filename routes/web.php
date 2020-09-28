@@ -12,13 +12,23 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+/*
 Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Auth::routes();
+Route::get('/',"WelcomeController@index");
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/main', 'MainController@index')->name('main');
+Route::post('/booking/form','BookingController@store')->name('test');
+
+Route::get('/mybooking','BookingController@show');
+Route::get('/date/form','User1Controller@index')->name('test');
+Route::post('/date/form','BookingController@datepic')->name('test');
+////Route::get('/new/form','BookingController@datepic')->name('test');
+Route::post('/mybooking','BookingController@deleteRow')->name('test');
+Route::post('/welcome/form','WelcomeController@show')->name('welcome');
 

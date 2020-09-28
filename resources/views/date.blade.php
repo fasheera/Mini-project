@@ -8,7 +8,7 @@
                     <div class="card-header "><span class="text-primary align:center"><h3><b>Choose your Time & Date</b></h3></span></div>
 
                     <div class="card-body">
-                      <form method="POST" action="/welcome/form">
+                      <form method="post" action="/date/form">
                         {{csrf_field()}}
                         <div class="form-group">
                           <label for="datetime">Date and StartTime:</label>
@@ -16,7 +16,7 @@
                         </div>
                         <div class="form-group">
                             <label for="Endtime">EndTime </label>
-                            <input id="Endtime" type="time" name="Endtime"  class="form-control"> 
+                            <input  type="time" id="endtime" name="endtime"  class="form-control">
                             </div>
                         <button type="submit" class="btn btn-primary ">Submit</button>  
                       </form>

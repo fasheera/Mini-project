@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Nunito);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Nunito); 
 
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
@@ -6,7 +6,29 @@
  * Copyright 2011-2020 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
+ svg{
+  max-width: 100%;
+  height: auto;
+}
+.homefunction a{
+  pointer-events: none ;
 
+}
+.homefunction a.clickable {
+  pointer-events: auto;
+}
+rect:hover{
+  fill: rgb(71, 71, 71) !important;
+}
+path:hover{
+  fill: rgb(71, 71, 71) !important;
+}
+a.booked{
+  pointer-events: none ;
+}
+a.booked rect, a.booked path{
+  fill:red !important;
+}
 :root {
   --blue: #3490dc;
   --indigo: #6574cd;
