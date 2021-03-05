@@ -1,0 +1,48 @@
+@import url(https://fonts.googleapis.com/css?family=Nunito); 
+
+.py-4{
+    padding-top:5.5rem !important;
+    background-color:#f8f9fa ;
+}
+
+.card{
+    background: linear-gradient(to top left, #000000 25%, #0000cc 100%);
+    }
+
+    .card-body{
+        padding-top: 3.25rem;
+        padding-bottom: 3.25rem;
+        padding-right: 1.25rem;
+        padding-left:1.25rem;
+        color: honeydew;
+        font-family: "Georgia", serif;
+        
+    }
+    .card-header{
+        border-bottom-width: 0px;
+    border-bottom-style: none;
+    border-bottom-color:none;
+    font-family: "URW Chancery L", cursive;
+    font-size: 1.9rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #fbfcfd;
+    text-align: center;
+    }
+
+    .form{
+        display:inline;
+    }
+
+    .btn btn-primary {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        border-radius: 50%;
+      }

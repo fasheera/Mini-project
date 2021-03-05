@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container homefunction">
+
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
+             
                 <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
@@ -14,169 +15,145 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    {{ __('Vehicle parking map') }}
                     <div class="home">
-                                                        <?php 
-                                                            $C1 = "";$C2="";$C3="";$C4="";$C5="";$C6="";$C7="";$C8="";$C9="";$C10="";$C11="";$C12="";$C13="";$C14="";$C15="";
-                                                            $M1="";$M2="";$M3="";$M4="";$M5="";$M6="";$M7="";$M8="";$M9="";$M10="";$M11="";$M12="";$M13="";$M14="";$M15="";$M16="";$M17="";$M18="";$M19="";$M20="";$M21="";$M22="";$M23="";$M24="";$M25="";$M26="";$M27="";
-                                                        ?>
-                                                        @foreach($MyBooking as $MyBook)
+                        <?php 
+                            $C1 = "";$C2="";$C3="";$C4="";$C5="";$C6="";$C7="";$C8="";$C9="";$C10="";$C11="";$C12="";$C13="";$C14="";$C15="";
+                            $M1="";$M2="";$M3="";$M4="";$M5="";$M6="";$M7="";$M8="";$M9="";$M10="";$M11="";$M12="";$M13="";$M14="";$M15="";$M16="";$M17="";$M18="";$M19="";$M20="";$M21="";$M22="";$M23="";$M24="";$M25="";$M26="";$M27="";
+                        ?>
+                        @foreach($MyBooking as $MyBook)
 
-                                                            <?php
-                                                                switch ($MyBook->slot_no) {
-                                                                    case "C1":
-                                                                      $C1 = "C1";
-                                                                      break;
-                                                                    case "C2":
-                                                                     $C2 = "C2";
-                                                                      break;
-                                                                    case "C3":
-                                                                     $C3= "C3";
-                                                                        break;
-                                                                    case "C4":
-                                                                        $C4 ="C4";
-                                                                        break;
-                                                                    case "C5":
-                                                                        $C5 ="C5";
-                                                                        break;  
-                                                                    case "C6":
-                                                                        $C6 ="C6";
-                                                                        break;
-                                                                    case "C7":
-                                                                        $C7 ="C7";
-                                                                        break;
-                                                                    case "C8":
-                                                                        $C8 ="C8";
-                                                                        break;
-                                                                    case "C9":
-                                                                        $C9 ="C9";
-                                                                        break;
-                                                                    case "C10":
-                                                                        $C10 ="C10";
-                                                                        break;
-                                                                    case "C11":
-                                                                        $C11 ="C11";
-                                                                        break;
-                                                                    case "C12":
-                                                                        $C12 ="C12";
-                                                                        break; 
-                                                                    case "C13":
-                                                                        $C13 ="C13";
-                                                                        break;
-                                                                    case "C14":
-                                                                        $C14 ="C14";
-                                                                        break; 
-                                                                    case "C15":
-                                                                        $C15 ="C15";
-                                                                    break; 
-                                                                    case "M1":
-                                                                        $M1 ="M1";
-                                                                        break;      
-                                                                    case "M2":
-                                                                        $M2 ="M2";
-                                                                        break;
+                            <?php
+                                if($MyBook->slot_no == "C1" && $MyBook->status =="booked"){
+                                    $C1 = "C1";
+                                }
+                                if($MyBook->slot_no == "C2" && $MyBook->status =="booked"){
+                                    $C2 = "C2";
+                                }
+                                if($MyBook->slot_no == "C3" && $MyBook->status =="booked"){
+                                    $C3 = "C3";
+                                }
+                                if($MyBook->slot_no == "C4" && $MyBook->status =="booked"){
+                                    $C4 = "C4";
+                                }
+                                if($MyBook->slot_no == "C5" && $MyBook->status =="booked"){
+                                    $C5 = "C5";
+                                }
+                                if($MyBook->slot_no == "C6" && $MyBook->status =="booked"){
+                                    $C6 = "C6";
+                                }
+                                if($MyBook->slot_no == "C7" && $MyBook->status =="booked"){
+                                    $C7 = "C7";
+                                }
+                                if($MyBook->slot_no == "C8" && $MyBook->status =="booked"){
+                                    $C8 = "C8";
+                                }
+                                if($MyBook->slot_no == "C9" && $MyBook->status =="booked"){
+                                    $C9 = "C9";
+                                }
+                                if($MyBook->slot_no == "C10" && $MyBook->status =="booked"){
+                                    $C10 = "C10";
+                                }
+                                if($MyBook->slot_no == "C11" && $MyBook->status =="booked"){
+                                    $C11 = "C11";
+                                }
+                                if($MyBook->slot_no == "C12" && $MyBook->status =="booked"){
+                                    $C12 = "C12";
+                                }
+                                if($MyBook->slot_no == "C13" && $MyBook->status =="booked"){
+                                    $C13 = "C13";
+                                }
+                                if($MyBook->slot_no == "C14" && $MyBook->status =="booked"){
+                                    $C14 = "C14";
+                                }
+                                if($MyBook->slot_no == "C15" && $MyBook->status =="booked"){
+                                    $C15 = "C15";
+                                }
+                                if($MyBook->slot_no == "M1" && $MyBook->status =="booked"){
+                                    $M1 = "M1";
+                                }
+                                if($MyBook->slot_no == "M2" && $MyBook->status =="booked"){
+                                    $M2 = "M2";
+                                }
+                                if($MyBook->slot_no == "M3" && $MyBook->status =="booked"){
+                                    $M3 = "M3";
+                                }
+                                if($MyBook->slot_no == "M4" && $MyBook->status =="booked"){
+                                    $M4 = "M4";
+                                }
+                                if($MyBook->slot_no == "M5" && $MyBook->status =="booked"){
+                                    $M5 = "M5";
+                                }
+                                if($MyBook->slot_no == "M6" && $MyBook->status =="booked"){
+                                    $M6 = "M6";
+                                }
+                                if($MyBook->slot_no == "M7" && $MyBook->status =="booked"){
+                                    $M7 = "M7";
+                                }
+                                if($MyBook->slot_no == "M8" && $MyBook->status =="booked"){
+                                    $M8 = "M8";
+                                }
+                                if($MyBook->slot_no == "M9" && $MyBook->status =="booked"){
+                                    $M9 = "M9";
+                                }
+                                if($MyBook->slot_no == "M10" && $MyBook->status =="booked"){
+                                    $M10 = "M10";
+                                }
+                                if($MyBook->slot_no == "M11" && $MyBook->status =="booked"){
+                                    $M11 = "M11";
+                                }
+                                if($MyBook->slot_no == "M12" && $MyBook->status =="booked"){
+                                    $M12 = "M12";
+                                }
+                                if($MyBook->slot_no == "M13" && $MyBook->status =="booked"){
+                                    $M13 = "M13";
+                                }
+                                if($MyBook->slot_no == "M14" && $MyBook->status =="booked"){
+                                    $M14 = "M14";
+                                }
+                                if($MyBook->slot_no == "M15" && $MyBook->status =="booked"){
+                                    $M15 = "M15";
+                                }
+                                if($MyBook->slot_no == "M16" && $MyBook->status =="booked"){
+                                    $M16 = "M16";
+                                }
+                                if($MyBook->slot_no == "M17" && $MyBook->status =="booked"){
+                                    $M17 = "M17";
+                                }
+                                if($MyBook->slot_no == "M18" && $MyBook->status =="booked"){
+                                    $M18 = "M18";
+                                }
+                                if($MyBook->slot_no == "M19" && $MyBook->status =="booked"){
+                                    $M19 = "M19";
+                                }
+                                if($MyBook->slot_no == "M20" && $MyBook->status =="booked"){
+                                    $M20 = "M20";
+                                }
+                                if($MyBook->slot_no == "M21" && $MyBook->status =="booked"){
+                                    $M21 = "M21";
+                                }
+                                if($MyBook->slot_no == "M22" && $MyBook->status =="booked"){
+                                    $M22 = "M22";
+                                }
+                                if($MyBook->slot_no == "M23" && $MyBook->status =="booked"){
+                                    $M23 = "M23";
+                                }
+                                if($MyBook->slot_no == "M24" && $MyBook->status =="booked"){
+                                    $M24 = "M24";
+                                }
+                                if($MyBook->slot_no == "M25" && $MyBook->status =="booked"){
+                                    $M25 = "M25";
+                                }
+                                if($MyBook->slot_no == "M26" && $MyBook->status =="booked"){
+                                    $M26 = "M26";
+                                }
+                                if($MyBook->slot_no == "M27" && $MyBook->status =="booked"){
+                                    $M27 = "M27";
 
-                                                                    case "M3":
-                                                                        $M3 ="M3";
-                                                                        break;
+                                }
 
-                                                                    case "M4":
-                                                                        $M4 ="M4";
-                                                                        break;
-
-                                                                    case "M5":
-                                                                        $M5 ="M5";
-                                                                        break;
-                                                                    case "M6":
-                                                                        $M6 ="M6";
-                                                                        break;
-
-                                                                    case "M7":
-                                                                        $M7 ="M7";
-                                                                        break;
-
-                                                                    case "M8":
-                                                                        $M8 ="M8";
-                                                                        break;
-                                                                    case "M9":
-                                                                        $M9 ="M9";
-                                                                        break;
-                                                                        
-                                                                    case "M10":
-                                                                        $M10 ="M10";
-                                                                        break;
-                                                                        
-                                                                    case "M11":
-                                                                        $M11 ="M11";
-                                                                        break;
-
-                                                                    case "M12":
-                                                                        $M12 ="M12";
-                                                                        break;
-
-                                                                    case "M13":
-                                                                        $M13 ="M13";
-                                                                        break;
-
-                                                                    case "M14":
-                                                                        $M14 ="M14";
-                                                                        break;
-
-                                                                    case "M15":
-                                                                        $M15 ="M15";
-                                                                        break;
-
-                                                                    case "M16":
-                                                                        $M16 ="M16";
-                                                                        break;
-
-                                                                    case "M17":
-                                                                        $M17 ="M17";
-                                                                        break;
-
-                                                                    case "M18":
-                                                                        $M18 ="M18";
-                                                                        break;
-
-                                                                    case "M19":
-                                                                        $M19 ="M19";
-                                                                        break;
-
-                                                                    case "M20":
-                                                                        $M20 ="M20";
-                                                                        break;
-
-                                                                    case "M21":
-                                                                        $M21 ="M21";
-                                                                        break;
-
-                                                                    case "M22":
-                                                                        $M22 ="M22";
-                                                                        break;
-
-                                                                    case "M23":
-                                                                        $M23 ="M23";
-                                                                        break;
-
-                                                                    case "M24":
-                                                                        $M24 ="M24";
-                                                                        break;
-
-                                                                    case "M25":
-                                                                        $M25 ="M25";
-                                                                        break;
-
-                                                                    case "M26":
-                                                                        $M26 ="M26";
-                                                                        break;
-
-                                                                    case "M27":
-                                                                        $M27 ="M27";
-                                                                        break;
-                                                                  }
-
-                                                            ?>
-                                                        @endforeach
+                            ?>
+                        @endforeach
                                                         <svg
                                                             inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
                                                             sodipodi:docname="Parking slot2.svg"
@@ -4140,4 +4117,5 @@
         </div>
     </div>
 </div>
+
 @endsection

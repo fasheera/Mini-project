@@ -25,6 +25,8 @@ class CreateBookingsTable extends Migration
            // $table->integer('user_id')->unsigned();
             //$table->integer('user_id')->auth()->id();            
             $table->string('faculty');
+            $table->string('updated_by');
+            $table->string('status');
             $table->timestamps();
         });
         /*Schema::table('bookings', function($table) {

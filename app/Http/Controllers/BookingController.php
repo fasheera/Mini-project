@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\booking;
+use App\user;
 use Illuminate\Http\Request;
 use Auth;
 use View;
@@ -49,6 +50,9 @@ class BookingController extends Controller
     public function store(Request $request)
     {
         $booking=new booking;
+        
+        $users = User::find(Auth::user()->id);
+        $name = $users['name'];
 
         $booking->name=$request->name;
         $booking->position=$request->position;
@@ -57,6 +61,8 @@ class BookingController extends Controller
         $booking->time=$request->daytime;
         $booking->endtime=$request->endtime;
         $booking->user_id=$request->user_id;
+        $booking->updated_by=$name;
+        $booking->status="booked";
         $booking->faculty=$request->faculty;
         $booking->save();
         return redirect()->back();
@@ -71,13 +77,31 @@ class BookingController extends Controller
     public function show(booking $booking)
     {
       $id = Auth::user()->id;
-      if($id == "1"){
+      $users = User::find(Auth::user()->id);
+      $user_role = $users['Position'];
+      if($user_role == "admin" || $user_role="security"){
         $Mybookings=Booking::all();
         return view('mybooking',['Mybooking'=>$Mybookings]);
       }
       else{
         $Mybookings=Booking::all()->where('user_id',$id);
         return view('mybooking',['Mybooking'=>$Mybookings]);
+      }
+      
+    }
+    public function showCancled(booking $booking)
+    {
+      $id = Auth::user()->id;
+      $users = User::find(Auth::user()->id);
+      $user_role = $users['Position'];
+      
+      if($user_role == "admin" || $user_role=="security"){
+        $Mybookings=Booking::all();
+        return view('cancledbooking',['Mybooking'=>$Mybookings]);
+      }
+      else{
+       // $Mybookings=Booking::all()->where('user_id',$id);
+        return view('home');
       }
       
     }
@@ -120,11 +144,20 @@ class BookingController extends Controller
     public function deleteRow(Request $request)
     {
         //
-        $BookingID = $request->input('BookingID');
+      $id = Auth::user()->id;
+      $users = User::find(Auth::user()->id);
+      $name = $users['name'];
+       $BookingID = $request->input('BookingID');
         //DB::table('bookings')->where('id', '==',$BookingID )->delete();
-        Booking::where('id',$BookingID)->delete();        
+       // Booking::where('id',$BookingID)->delete(); 
+       DB::update('update bookings set updated_by = ?,status=?,updated_at=? where id = ?',[$name,"cancled",NOW(),$BookingID]);
+    //    $sql ="Update bookings set status ='cancled', updatedby ="$name" WHERE id == ";
+        // $MyBooking = DB::select($sql);   
+
+              
         $id = Auth::user()->id;
-        if($id == "1"){
+        $position = Auth::user();
+         if($id == "1" || $position == "security" ){
             $Mybookings=Booking::all();
             return view('mybooking',['Mybooking'=>$Mybookings]);
         }

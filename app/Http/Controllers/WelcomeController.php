@@ -50,13 +50,14 @@ class WelcomeController extends Controller
      */
     public function show(Request $request)
     {
-        $dateTime = $request->input('datetime');    
+        $dateTime = now();    
        /* $date = "2020-08-19";
         $time="";    
        $datetime = "28-1-2011 14:32:55";*/
+       date_default_timezone_set("UTC");
         $date = date('Y-m-d', strtotime($dateTime));
         $time = date('H:i:s', strtotime($dateTime));
-        $endtime =  $request->input('Endtime');
+        $endtime = date('H:i:s', strtotime($dateTime));
       /* $MyBooking = Booking::all()
             ->where('date', $date)
             ->Where(function ($query) {
@@ -73,6 +74,8 @@ class WelcomeController extends Controller
         //return view('booking',['Mybooking'=>$Mybookings]);
         return view('main',['MyBooking'=>$MyBooking]);
     }
+
+
 
     /**
      * Show the form for editing the specified resource.
@@ -106,5 +109,35 @@ class WelcomeController extends Controller
     public function destroy(welcome $welcome)
     {
         //
+    }
+
+    public function homePageShow()
+    {
+        $dateime =  now();
+        //echo $dateime ;
+       // $date = "2020-08-19";
+       // $time="";    
+       //$datetime = "28-1-2021 14:32:55";
+       $dateEime = "23:59:55";
+       date_default_timezone_set("UTC");
+        $date = date('Y-m-d', strtotime($dateime));
+      
+        $time = date('H:i:s', strtotime($dateime));
+        $endtime =  date('H:i:s', strtotime($dateEime));
+      /* $MyBooking = Booking::all()
+            ->where('date', $date)
+            ->Where(function ($query) {
+                $query->where('time', '<=', $time)
+                      ->where('endTime', '>=', $time);
+            })
+            ->orWhere(function ($query) {
+                $query->where('time', '<=', $endtime)
+                      ->where('endtime', '>=', $endtime);
+            })->get();*/
+            $sql ="SELECT * FROM `bookings` WHERE `date` = '$date' AND ((`time` <= '$time' AND `endtime` > '$time') OR (`time` <= '$endtime' AND `endtime` > '$endtime') OR (`time` > '$time' AND `endtime` < '$endtime') )";
+            $MyBooking = DB::select($sql); 
+       // $MyBooking = Booking::all()->where('date', $date)->where('time',$time);        
+        //return view('booking',['Mybooking'=>$Mybookings]);
+        return view('main',['MyBooking'=>$MyBooking]);
     }
 }

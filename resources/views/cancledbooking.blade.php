@@ -22,7 +22,9 @@
       <th scope="col">Start Time</th>
       <th scope="col">End Time</th>
       <th scope="col">Status</th>
-      <th scope="col">Booking Cancel</th>
+      <th scope="col">Update By</th>
+      <th scope="col">Created time</th>
+      <th scope="col">Canceled time</th>
     </tr>
   </thead>
   <tbody>
@@ -33,8 +35,11 @@
       <td>{{$My->date}}</td>
       <td>{{$My->time}}</td>
       <td>{{$My->endtime}}</td>
-      <td>{{$My->endtime}}</td>
-      <td>
+      <td>{{$My->status}}</td>
+      <td>{{$My->updated_by}}</td>
+      <td>{{$My->created_at}}</td>
+      <td>{{$My->updated_at}}</td>
+      <!-- <td>
       
         <?php 
           if($My->status == "cancled"){
@@ -42,14 +47,14 @@
           }
           else{
         ?>
-        <form method="post" action="/mybooking">
+       <form method="post" action="/mybooking">
           {{csrf_field()}}
           <div class="form-group">
             <input type="hidden" id="BookingID" name="BookingID" value="{{$My->id}}">
           </div>
           <button type="submit" class="btn btn-primary ">Booking Cancel</button>  
         </form>
-        <?php } ?>
+        <?php } ?> -->
         <!-- <a href='home'><button type="submit" class="btn btn-primary ">Booking Cancel</button></a></td> -->
     </tr>
     @endforeach

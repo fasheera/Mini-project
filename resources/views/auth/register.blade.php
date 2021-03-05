@@ -38,12 +38,12 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="Vehicle_Number" class="col-md-4 col-form-label text-md-right">{{ __('Vehicle Number') }}</label>
+                            <!-- <label for="Vehicle_Number" class="col-md-4 col-form-label text-md-right">{{ __('Vehicle Number') }}</label> -->
 
                             <div class="col-md-6">
-                                <input id="Vehicle_Number" type="text" class="form-control @error('Vehicle_Number') is-invalid @enderror" name="Vehicle_Number" value="{{ old('Vehicle_Number') }}" required autocomplete="Vehicle_Number" autofocus>
+                                <input id="nicno" type="hidden" class="form-control @error('nicno') is-invalid @enderror" name="nicno" value="non" required autocomplete="nicno" autofocus>
 
-                                @error('Vehicle_Number')
+                                @error('nicno')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -64,10 +64,10 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="Position" class="col-md-4 col-form-label text-md-right">{{ __('Position') }}</label>
+                            <!-- <label for="Position" class="col-md-4 col-form-label text-md-right">{{ __('Position') }}</label> -->
 
                             <div class="col-md-6">
-                            <input id="Position" type="text" class="form-control @error('Position') is-invalid @enderror" name="Position" value="{{ old('Position') }}" required autocomplete="Position" autofocus>
+                            <input id="Position" type="hidden" class="form-control @error('Position') is-invalid @enderror" name="Position" value="user" required autocomplete="Position" autofocus>
 
                                 <!-- <select name="position" class="form-control" >
                                     <option selected>Choose Position</option>
